@@ -1,7 +1,7 @@
 class Solution:
     def maxSubarraySumCircular(self, A) -> int:
 
-        print(A)
+        #print(A)
 
         kadane = self.kadane_max(A)
         if kadane < 0:
@@ -10,8 +10,8 @@ class Solution:
         for index in range(0, len(A)):
             wrap += A[index]
             A[index] = -A[index]
-        print("list after wrap :", A)
-        print("wrap :", wrap)
+        #print("list after wrap :", A)
+        #print("wrap :", wrap)
         wrap = wrap + self.kadane_max(A)
 
         if wrap > kadane :
